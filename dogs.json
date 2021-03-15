@@ -1,0 +1,14 @@
+{
+    "dogs": [{
+            "id": 12,
+            "performance": ["saluda", "levanta"],
+            "state": "healthy"
+        },
+        {
+            "id": 19,
+            "performance": ["saluda", "mea"],
+            "state": "needed"
+        }
+
+    ]
+}

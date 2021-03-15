@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class PetsService {
 
   catsUrl:string='http://localhost:3000/cats';
+  dogsUrl:string='http://localhost:1000/dogs';
 
   constructor(
     private http:HttpClient
@@ -14,7 +15,11 @@ export class PetsService {
 
 
   getAllCats(){
-    return this.http.get(this.catsUrl);
+    return this.http.get<string[]>(this.catsUrl);
+  }
+
+  getAllDogs(){
+    return this.http.get<string[]>(this.dogsUrl);
   }
 
 }

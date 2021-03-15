@@ -15,6 +15,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CatFormComponent } from './components/cat-form/cat-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PetsComponent } from './components/pets/pets.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     LimpiezaComponent,
     SidenavComponent,
     CatFormComponent,
+    PetsComponent,
    
   ],
   imports: [
