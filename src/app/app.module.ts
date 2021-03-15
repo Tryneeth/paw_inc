@@ -11,11 +11,10 @@ import { AdopcionComponent } from './components/adopcion/adopcion.component';
 import { LimpiezaComponent } from './components/limpieza/limpieza.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+
+import { CatFormComponent } from './components/cat-form/cat-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +23,9 @@ import { MatListModule } from '@angular/material/list';
     NavbarComponent,
     AdopcionComponent,
     LimpiezaComponent,
-    SidenavComponent
+    SidenavComponent,
+    CatFormComponent,
+   
   ],
   imports: [
     MaterialModule,
@@ -32,11 +33,9 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    FormsModule,
+    ReactiveFormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

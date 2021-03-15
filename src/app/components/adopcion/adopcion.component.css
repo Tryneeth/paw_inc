@@ -1,3 +1,7 @@
 .sidenav {
     width: 15%;
 }
+
+mat-sidenav-content {
+    height: 100%;
+}
