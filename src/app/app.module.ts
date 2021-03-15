@@ -14,6 +14,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { CatFormComponent } from './components/cat-form/cat-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
    
   ],
   providers: [],
