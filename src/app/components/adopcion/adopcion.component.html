@@ -1,1 +1,15 @@
-<p>adopcion works!</p>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport fixedTopGap="50" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-nav-list>
+            <a mat-list-item href="#">
+                <mat-icon>add</mat-icon>New Pet </a>
+            <a mat-list-item href="#">All Pets</a>
+            <a mat-list-item href="#">Cleaned</a>
+            <a mat-list-item href="#">Ready</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+        <!-- Add Content Here -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

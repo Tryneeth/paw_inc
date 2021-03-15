@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-adopcion',
-  templateUrl: './adopcion.component.html',
-  styleUrls: ['./adopcion.component.css']
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css']
 })
-export class AdopcionComponent implements OnInit {
+export class SidenavComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -17,8 +17,5 @@ export class AdopcionComponent implements OnInit {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-
-  ngOnInit(): void {
-  }
 
 }
