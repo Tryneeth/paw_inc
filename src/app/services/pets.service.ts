@@ -63,7 +63,8 @@ export class PetsService {
     });
   }
 
-  deleteDogsAdoption(ids){
+  deleteDogsAdoption(dogs){
+    let ids=dogs.map((dog)=>dog.id);
     return ids.forEach(id => {
       this.http.delete(`${this.dogsUrl}/${id}`).subscribe(); 
       console.log(id);

@@ -31,7 +31,6 @@ export class LimpiezaComponent implements OnInit {
 
   fetchAllDogs(){
     this._pets.getDogsCleansing().subscribe((data:any)=>{
-      this.catsCleansing=data;
       this.dogsCleansing=data;
     })
   }
@@ -42,7 +41,7 @@ export class LimpiezaComponent implements OnInit {
     }, (error)=>console.log(error))
   }
 
-    deleteCat(id){
+  deleteCat(id){
     this._pets.deleteCatCleansing(id).subscribe((data)=>{
       this.fetchAllCats();
     }, (error)=>console.log(error))
