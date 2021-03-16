@@ -10,7 +10,9 @@ export class PetsService {
 
   catsUrl:string='http://localhost:3000/cats';
   dogsUrl:string='http://localhost:1000/dogs';
-
+  cleansing_catsURL:string='http://localhost:1000/dogs';
+  cleansing_dogsURL:string='http://localhost:1000/dogs';
+ 
   constructor(
     private http:HttpClient
   ) { }
