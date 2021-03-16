@@ -6,6 +6,7 @@ import { LimpiezaComponent } from './components/limpieza/limpieza.component';
 import { PetsComponent } from './components/pets/pets.component';
 import { CatFormComponent } from './components/cat-form/cat-form.component';
 import { DogFormComponent } from './components/dog-form/dog-form.component';
+import { ReadyComponent } from './components/ready/ready.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path:'pets_list', component:PetsComponent},
     {path:'cat_form', component:CatFormComponent},
     {path:'dog_form', component:DogFormComponent},
+    {path:'healthy_pets', component:ReadyComponent},
     {path:'',pathMatch:'full', redirectTo:'pets_list'},
   
   ]},

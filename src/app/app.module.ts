@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PetsComponent } from './components/pets/pets.component';
 import { DogFormComponent } from './components/dog-form/dog-form.component';
+import { ReadyComponent } from './components/ready/ready.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { DogFormComponent } from './components/dog-form/dog-form.component';
     CatFormComponent,
     PetsComponent,
     DogFormComponent,
+    ReadyComponent,
    
   ],
   imports: [

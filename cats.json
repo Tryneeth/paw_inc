@@ -1,36 +1,6 @@
 {
   "cats": [
     {
-      "id": "9",
-      "ic": 12,
-      "ready": true
-    },
-    {
-      "id": "12334",
-      "ic": 234,
-      "ready": true
-    },
-    {
-      "id": "4",
-      "ic": 89,
-      "ready": true
-    },
-    {
-      "id": "1",
-      "ic": 120,
-      "ready": true
-    },
-    {
-      "id": "5",
-      "ic": 4,
-      "ready": true
-    },
-    {
-      "id": "1212312312",
-      "ic": 3,
-      "ready": true
-    },
-    {
       "id": "999",
       "ic": 67,
       "ready": true
