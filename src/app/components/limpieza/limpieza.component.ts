@@ -17,7 +17,7 @@ export class LimpiezaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.catsCleansed=this._pets.catsAdoption;
+    
   }
 
 

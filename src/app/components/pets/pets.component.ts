@@ -62,8 +62,8 @@ export class PetsComponent implements OnInit {
 
   sendCatsToCleansed(){
     if(this.cats.length>0){
-      let ids=this.cats.map((cat)=>cat.id);
-      this._pets.deleteCatsAdoption(ids);
+      this._pets.registerCatsCleansing(this.cats)
+      this._pets.deleteCatsAdoption(this.cats);
       this.cats=[];
     }else{
       return null;
@@ -72,8 +72,8 @@ export class PetsComponent implements OnInit {
 
 sendDogsToCleansed(){
   if(this.dogs.length>0){
-    let ids=this.dogs.map((dog)=>dog.id);
-    this._pets.deleteDogsAdoption(ids);
+    this._pets.registerDogsCleansing(this.dogs)
+    this._pets.deleteDogsAdoption(this.dogs);
     this.dogs=[];
   }else{
     return null;

@@ -10,8 +10,8 @@ export class PetsService {
 
   catsUrl:string='http://localhost:3000/cats';
   dogsUrl:string='http://localhost:1000/dogs';
-  cleansing_catsURL:string='http://localhost:1000/dogs';
-  cleansing_dogsURL:string='http://localhost:1000/dogs';
+  cleansing_catsURL:string='http://localhost:5000/cats';
+  cleansing_dogsURL:string='http://localhost:7000/dogs';
  
   constructor(
     private http:HttpClient
@@ -47,7 +47,9 @@ export class PetsService {
     console.log(this.catsAdoption);
   }
 
-  deleteCatsAdoption(ids){
+  deleteCatsAdoption(cats){
+  
+    let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.catsUrl}/${id}`).subscribe(); 
       console.log(id);
@@ -58,6 +60,18 @@ export class PetsService {
     return ids.forEach(id => {
       this.http.delete(`${this.dogsUrl}/${id}`).subscribe(); 
       console.log(id);
+    });
+  }
+
+  registerCatsCleansing(cats){
+    return cats.forEach(cat => {
+      this.http.post(this.cleansing_catsURL, cat).subscribe();
+    });
+  }
+
+  registerDogsCleansing(dogs){
+    return dogs.forEach(dog => {
+      this.http.post(this.cleansing_dogsURL, dog).subscribe();
     });
   }
 
