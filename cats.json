@@ -1,19 +1,24 @@
 {
-    "cats": [{
-            "id": 22,
-            "ic": 120,
-            "state": "healthy"
-        },
-        {
-            "id": 12,
-            "ic": 120,
-            "state": "needed"
-        },
-        {
-            "id": 32,
-            "ic": 120,
-            "state": "healthy"
-        }
-
-    ]
+  "cats": [
+    {
+      "id": 22,
+      "ic": 120,
+      "state": "healthy"
+    },
+    {
+      "id": 12,
+      "ic": 120,
+      "state": "needed"
+    },
+    {
+      "id": 32,
+      "ic": 120,
+      "state": "healthy"
+    },
+    {
+      "id": "1998",
+      "ic": 110,
+      "state": "healthy"
+    }
+  ]
 }

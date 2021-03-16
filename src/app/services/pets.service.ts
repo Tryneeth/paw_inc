@@ -22,4 +22,8 @@ export class PetsService {
     return this.http.get<string[]>(this.dogsUrl);
   }
 
+  registerCat(cat){
+    return this.http.post(this.catsUrl,cat);
+  }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PetsService } from '../../services/pets.service';
 
 
 @Component({
@@ -10,10 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CatFormComponent implements OnInit {
 
   formulario:FormGroup;
+  cat;
   
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private _pets:PetsService
   ) { 
     this.createForm()
   }
@@ -34,6 +37,12 @@ export class CatFormComponent implements OnInit {
     event.preventDefault();
     if(this.formulario.valid){
       console.log(this.formulario.value);
+      this.cat=this.formulario.value;
+
+      this._pets.registerCat(this.cat).subscribe((data)=>console.log('Good'), (error)=>console.log(error));
+
+      
+
     }
   }
 
