@@ -71,6 +71,23 @@ export class PetsService {
     });
   }
 
+  deleteCatsCleansing(cats){
+    let ids=cats.map((cat)=>cat.id);
+    return ids.forEach(id => {
+      this.http.delete(`${this.cleansing_catsURL}/${id}`).subscribe(); 
+      console.log(id);
+    });
+  }
+
+  deleteDogsCleansing(dogs){
+    let ids=dogs.map((dog)=>dog.id);
+    return ids.forEach(id => {
+      this.http.delete(`${this.cleansing_dogsURL}/${id}`).subscribe(); 
+      console.log(id);
+    });
+  }
+
+
   registerCatsCleansing(cats){
     return cats.forEach(cat => {
       this.http.post(this.cleansing_catsURL, cat).subscribe();
@@ -80,6 +97,18 @@ export class PetsService {
   registerDogsCleansing(dogs){
     return dogs.forEach(dog => {
       this.http.post(this.cleansing_dogsURL, dog).subscribe();
+    });
+  }
+
+  registerCatsAdoption(cats){
+    return cats.forEach(cat => {
+      this.http.post(this.catsUrl, cat).subscribe();
+    });
+  }
+
+  registerDogsAdoption(dogs){
+    return dogs.forEach(dog => {
+      this.http.post(this.dogsUrl, dog).subscribe();
     });
   }
 

@@ -18,7 +18,12 @@ export class PetsComponent implements OnInit {
  
 
   cats:string[];
+  notReadyCats:string[];
+  readyCats:string[];
+
   dogs:string[];
+  notReadyDogs:string[];
+  readyDogs:string[];
 
   constructor(
     private _pets:PetsService
@@ -33,6 +38,8 @@ export class PetsComponent implements OnInit {
     this._pets.getAllCats().subscribe((data)=>{
       console.log(data);
       this.cats=data;
+      this.notReadyCats=this.cats.filter((cat)=>cat.ready===false);
+      this.readyCats=this.cats.filter((cat)=>cat.ready===true);
     }, (error)=>{
       console.log(error);
     })
@@ -42,6 +49,8 @@ export class PetsComponent implements OnInit {
     this._pets.getAllDogs().subscribe((data)=>{
       console.log(data);
       this.dogs=data;
+      this.notReadyDogs=this.dogs.filter((dog)=>dog.ready===false);
+      this.readyDogs=this.dogs.filter((dog)=>dog.ready===true);
     }, (error)=>{
       console.log(error);
     })
@@ -61,20 +70,22 @@ export class PetsComponent implements OnInit {
   }
 
   sendCatsToCleansed(){
-    if(this.cats.length>0){
-      this._pets.registerCatsCleansing(this.cats)
-      this._pets.deleteCatsAdoption(this.cats);
-      this.cats=[];
+    if(this.notReadyCats.length>0){
+      this._pets.registerCatsCleansing(this.notReadyCats)
+      this._pets.deleteCatsAdoption(this.notReadyCats);
+      this.notReadyCats=[];
+      this.fetchAllCats();
     }else{
       return null;
     }
 }
 
 sendDogsToCleansed(){
-  if(this.dogs.length>0){
-    this._pets.registerDogsCleansing(this.dogs)
-    this._pets.deleteDogsAdoption(this.dogs);
-    this.dogs=[];
+  if(this.notReadyDogs.length>0){
+    this._pets.registerDogsCleansing(this.notReadyDogs)
+    this._pets.deleteDogsAdoption(this.notReadyDogs);
+    this.notReadyDogs=[];
+    this.fetchAllDogs();
   }else{
     return null;
   }
