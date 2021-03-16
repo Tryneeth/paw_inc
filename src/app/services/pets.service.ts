@@ -34,12 +34,20 @@ export class PetsService {
     return this.http.post(this.dogsUrl, dog);
   }
 
-  deleteDog(id){
+  deleteDogAdoption(id){
     return this.http.delete(`${this.dogsUrl}/${id}`);
   }
 
-  deleteCat(id){
+  deleteCatAdoption(id){
     return this.http.delete(`${this.catsUrl}/${id}`);
+  }
+
+  deleteCatCleansing(id){
+    return this.http.delete(`${this.cleansing_catsURL}/${id}`);
+  }
+
+  deleteDogCleansing(id){
+    return this.http.delete(`${this.cleansing_dogsURL}/${id}`);
   }
 
   storeCats(cats){
@@ -48,7 +56,6 @@ export class PetsService {
   }
 
   deleteCatsAdoption(cats){
-  
     let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.catsUrl}/${id}`).subscribe(); 
@@ -73,6 +80,14 @@ export class PetsService {
     return dogs.forEach(dog => {
       this.http.post(this.cleansing_dogsURL, dog).subscribe();
     });
+  }
+
+  getCatsCleansing(){
+    return this.http.get(this.cleansing_catsURL);
+  }
+
+  getDogsCleansing(){
+    return this.http.get(this.cleansing_dogsURL);
   }
 
  

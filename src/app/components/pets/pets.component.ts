@@ -49,13 +49,13 @@ export class PetsComponent implements OnInit {
 
 
   deleteDog(id){
-    this._pets.deleteDog(id).subscribe((data)=>{
+    this._pets.deleteDogAdoption(id).subscribe((data)=>{
       this.fetchAllDogs();
     }, (error)=>console.log(error))
   }
 
     deleteCat(id){
-    this._pets.deleteCat(id).subscribe((data)=>{
+    this._pets.deleteCatAdoption(id).subscribe((data)=>{
       this.fetchAllCats();
     }, (error)=>console.log(error))
   }
