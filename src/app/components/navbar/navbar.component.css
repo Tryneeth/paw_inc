@@ -1,4 +1,5 @@
 .navbar {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,6 +8,19 @@
     background: white !important;
     width: 100%;
     height: 10vh;
+    z-index: 999;
+}
+
+.navbar div span {
+    text-shadow: 1px 1px 4px gray;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.navbar div span span {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .navbar .links a {

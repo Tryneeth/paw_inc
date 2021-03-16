@@ -26,14 +26,14 @@ export class ReadyComponent implements OnInit {
   }
 
   fetchReadyCats(){
-    this._pets.getAllCats().subscribe((data)=>{
+    this._pets.getAllCats().subscribe((data:any)=>{
       this.readyCats=data.filter((cat)=>cat.ready===true);
     })
   }
 
 
   fetchReadyDogs(){
-    this._pets.getAllDogs().subscribe((data)=>{
+    this._pets.getAllDogs().subscribe((data:any)=>{
       this.readyDogs=data.filter((dog)=>dog.ready===true);
     })
   }

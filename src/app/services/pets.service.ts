@@ -19,11 +19,11 @@ export class PetsService {
 
 
   getAllCats(){
-    return this.http.get<string[]>(this.catsUrl);
+    return this.http.get(this.catsUrl);
   }
 
   getAllDogs(){
-    return this.http.get<string[]>(this.dogsUrl);
+    return this.http.get(this.dogsUrl);
   }
 
   registerCat(cat){
