@@ -1,3 +1,8 @@
 {
-  "dogs": []
+  "dogs": [
+    {
+      "id": "12",
+      "ready": false
+    }
+  ]
 }

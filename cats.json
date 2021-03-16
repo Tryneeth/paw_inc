@@ -1,3 +1,29 @@
 {
-  "cats": []
+  "cats": [
+    {
+      "id": "1",
+      "ic": 120,
+      "ready": false
+    },
+    {
+      "id": "2",
+      "ic": 110,
+      "ready": false
+    },
+    {
+      "id": "3",
+      "ic": 190,
+      "ready": false
+    },
+    {
+      "id": "4",
+      "ic": 198,
+      "ready": false
+    },
+    {
+      "id": "6",
+      "ic": 148,
+      "ready": false
+    }
+  ]
 }

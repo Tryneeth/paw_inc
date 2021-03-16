@@ -28,7 +28,7 @@ export class DogFormComponent implements OnInit {
   createForm(){
     this.formulario=this.fb.group({
       id:['', [Validators.required]],
-      state:['', [Validators.required]],
+    
      /*  performance:this.fb.array([]) */
     })
   }
@@ -38,7 +38,9 @@ export class DogFormComponent implements OnInit {
     event.preventDefault();
     if(this.formulario.valid){
       console.log(this.formulario.value);
-      this.dog=this.formulario.value;
+      let tempDog=this.formulario.value;
+      tempDog={...tempDog, ready:false};
+      this.dog=tempDog;
       this._pets.registerDog(this.dog).subscribe((data)=>{
         console.log('Good');
         this.router.navigate(['adoption_center/pets_list']);

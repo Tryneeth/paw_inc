@@ -30,7 +30,7 @@ export class CatFormComponent implements OnInit {
     this.formulario=this.fb.group({
       id:['', [Validators.required]],
       ic:['', [Validators.required]],
-      state:['', [Validators.required]],
+      
     })
   }
 
@@ -39,7 +39,9 @@ export class CatFormComponent implements OnInit {
     event.preventDefault();
     if(this.formulario.valid){
       console.log(this.formulario.value);
-      this.cat=this.formulario.value;
+      let tempCat=this.formulario.value;
+      tempCat={...tempCat, ready:false};
+      this.cat=tempCat;
 
       this._pets.registerCat(this.cat).subscribe((data)=>{
         console.log('Good');

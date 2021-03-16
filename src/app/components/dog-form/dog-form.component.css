@@ -10,21 +10,10 @@
     padding: 20px;
 }
 
-.radio-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 20px 0;
-}
 
-.radio-buttons mat-radio-button {
-    margin: 10px;
-}
-
-.performance {
+/* .performance {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-}
+} */
