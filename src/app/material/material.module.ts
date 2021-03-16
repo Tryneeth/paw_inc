@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const modules=[
   MatToolbarModule,
@@ -20,7 +21,8 @@ const modules=[
   MatFormFieldModule,
   MatInputModule,
   MatRadioModule,
-  MatTableModule
+  MatTableModule,
+  MatCheckboxModule
 ]
 
 

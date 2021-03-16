@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PetsService } from '../../services/pets.service';
 
 
@@ -16,7 +17,8 @@ export class CatFormComponent implements OnInit {
 
   constructor(
     private fb:FormBuilder,
-    private _pets:PetsService
+    private _pets:PetsService,
+    private router:Router
   ) { 
     this.createForm()
   }
@@ -39,7 +41,10 @@ export class CatFormComponent implements OnInit {
       console.log(this.formulario.value);
       this.cat=this.formulario.value;
 
-      this._pets.registerCat(this.cat).subscribe((data)=>console.log('Good'), (error)=>console.log(error));
+      this._pets.registerCat(this.cat).subscribe((data)=>{
+        console.log('Good');
+        this.router.navigate(['adoption_center/pets_list']);
+      }, (error)=>console.log(error));
 
       
 

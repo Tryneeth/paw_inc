@@ -1,1 +1,29 @@
-<p>dog-form works!</p>
+<form class="form" [formGroup]="formulario" (ngSubmit)="sendForm($event)">
+    <h3>Register Dog</h3>
+    <mat-form-field class="example-form-field">
+        <mat-label>ID</mat-label>
+        <input matInput type="text" formControlName="id" autocomplete="off">
+
+    </mat-form-field>
+
+    <!--  <div class="performance" formArrayName="performance">
+        <h3>Performances</h3>
+        <mat-checkbox formControlName="0">Bark</mat-checkbox>
+        <mat-checkbox formControlName="1">Sit</mat-checkbox>
+        <mat-checkbox formControlName="2">Stand up</mat-checkbox>
+        <mat-checkbox formControlName="3">Roll over</mat-checkbox>
+    </div>
+ -->
+
+    <div class="radio-buttons">
+        <h3>Select the state</h3>
+        <mat-radio-group aria-label="State" formControlName="state">
+            <mat-radio-button value="healthy">Healthy</mat-radio-button>
+            <br>
+            <mat-radio-button value="needed">Need Attention</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <button type="submit" mat-raised-button color="warn">Register</button>
+
+</form>
