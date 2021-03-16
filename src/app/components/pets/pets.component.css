@@ -1,7 +1,12 @@
 table {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .dogs-content {
     margin-top: 100px;
+}
+
+.clean-button {
+    margin-top: 50px;
 }

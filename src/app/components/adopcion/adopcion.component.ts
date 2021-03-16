@@ -21,4 +21,6 @@ export class AdopcionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ 
+
 }

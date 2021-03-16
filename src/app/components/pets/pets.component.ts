@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PetsService } from '../../services/pets.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 
 
@@ -66,5 +60,24 @@ export class PetsComponent implements OnInit {
     }, (error)=>console.log(error))
   }
 
+  sendCatsToCleansed(){
+    if(this.cats.length>0){
+      let ids=this.cats.map((cat)=>cat.id);
+      this._pets.deleteCatsAdoption(ids);
+      this.cats=[];
+    }else{
+      return null;
+    }
+}
+
+sendDogsToCleansed(){
+  if(this.dogs.length>0){
+    let ids=this.dogs.map((dog)=>dog.id);
+    this._pets.deleteDogsAdoption(ids);
+    this.dogs=[];
+  }else{
+    return null;
+  }
+}
 
 }

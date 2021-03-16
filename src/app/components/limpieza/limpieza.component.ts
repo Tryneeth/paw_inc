@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PetsService } from 'src/app/services/pets.service';
 
 @Component({
   selector: 'app-limpieza',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LimpiezaComponent implements OnInit {
 
-  constructor() { }
+  catsCleansed:string[];
+  displayedColumnsCats: string[] = ['id', 'ic', 'state'];
+  displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
+
+  constructor(
+    private _pets:PetsService
+  ) { }
 
   ngOnInit(): void {
+    this.catsCleansed=this._pets.catsAdoption;
   }
+
+
+  
 
 }
