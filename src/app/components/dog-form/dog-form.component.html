@@ -1,22 +1,15 @@
-<form class="form" [formGroup]="formulario" (ngSubmit)="sendForm($event)">
-    <h3>Register Dog</h3>
-    <mat-form-field class="example-form-field">
-        <mat-label>ID</mat-label>
-        <input matInput type="text" formControlName="id" autocomplete="off">
+<div class="dog-form">
+    <form class="form" [formGroup]="formulario" (ngSubmit)="sendForm($event)">
+        <h3> <span>R</span>egister <span>D</span>og</h3>
+        <mat-form-field class="example-form-field">
+            <mat-label>ID</mat-label>
+            <input matInput type="text" formControlName="id" autocomplete="off">
 
-    </mat-form-field>
-
-    <!--  <div class="performance" formArrayName="performance">
-        <h3>Performances</h3>
-        <mat-checkbox formControlName="0">Bark</mat-checkbox>
-        <mat-checkbox formControlName="1">Sit</mat-checkbox>
-        <mat-checkbox formControlName="2">Stand up</mat-checkbox>
-        <mat-checkbox formControlName="3">Roll over</mat-checkbox>
-    </div>
- -->
+        </mat-form-field>
 
 
 
-    <button type="submit" mat-raised-button color="warn">Register</button>
+        <button type="submit" mat-raised-button>Register</button>
 
-</form>
+    </form>
+</div>

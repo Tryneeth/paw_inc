@@ -17,13 +17,13 @@ export class PetsComponent implements OnInit {
   displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
  
 
-  cats:string[];
-  notReadyCats:string[];
-  readyCats:string[];
+  cats;
+  notReadyCats;
+  readyCats;
 
-  dogs:string[];
-  notReadyDogs:string[];
-  readyDogs:string[];
+  dogs;
+  notReadyDogs;
+  readyDogs;
 
   constructor(
     private _pets:PetsService
