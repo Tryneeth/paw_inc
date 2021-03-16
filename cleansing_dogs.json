@@ -1,12 +1,12 @@
 {
   "dogs": [
     {
-      "id": "1",
-      "ready": false
+      "id": "2",
+      "ready": true
     },
     {
       "id": "3",
-      "ready": false
+      "ready": true
     }
   ]
 }

@@ -91,6 +91,14 @@ export class PetsService {
     return this.http.get(this.cleansing_dogsURL);
   }
 
+  updateCatState(id:string, update){
+    return this.http.put(`${this.cleansing_catsURL}/${id}`, update)
+  }
+
+  updateDogState(id:string, update){
+    return this.http.put(`${this.cleansing_dogsURL}/${id}`, update)
+  }
+
  
 
 

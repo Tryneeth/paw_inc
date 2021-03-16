@@ -28,14 +28,14 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
                 <button mat-raised-button color="accent" (click)="deleteCat(element.id)">Delete</button>
-                <button mat-raised-button color="primary" style="margin-left: 20px;" *ngIf="element.state==='needed'">Treat</button>
+                <button mat-raised-button color="primary" style="margin-left: 20px;" (click)="cleanCat(element)">Clean</button>
             </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumnsCats"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumnsCats;"></tr>
     </table>
-
+    <button class="clean-button" mat-raised-button color="primary">Clean All</button>
     <button class="clean-button" mat-stroked-button color="primary">Send to Cleansed Center</button>
 
 
@@ -72,7 +72,7 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
                 <button mat-raised-button color="accent" (click)="deleteDog(element.id)">Delete</button>
-                <button mat-raised-button color="primary" style="margin-left: 20px;" *ngIf="element.state==='needed'">Treat</button>
+                <button mat-raised-button color="primary" style="margin-left: 20px;" (click)="cleanDog(element)">Clean</button>
             </td>
         </ng-container>
 
@@ -80,6 +80,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsDogs;"></tr>
     </table>
 
+    <button class="clean-button" mat-raised-button color="primary">Clean All</button>
     <button class="clean-button" mat-stroked-button color="primary">Send to Cleansed Center</button>
 
 

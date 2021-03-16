@@ -47,6 +47,32 @@ export class LimpiezaComponent implements OnInit {
     }, (error)=>console.log(error))
   }
 
+ 
+  cleanCat(cat){
+    let updateCat={
+     ...cat,
+     ready:true
+    }
+    this._pets.updateCatState(cat.id, updateCat).subscribe(
+      (data)=>{
+       this.fetchAllCats();
+      }
+    );
+    
+  }
+
+  cleanDog(dog){
+    let updateDog={
+     ...dog,
+     ready:true
+    }
+    this._pets.updateDogState(dog.id, updateDog).subscribe(
+      (data)=>{
+       this.fetchAllDogs();
+      }
+    );
+    
+  }
 
 
   

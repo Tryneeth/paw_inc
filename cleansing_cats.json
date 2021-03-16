@@ -2,13 +2,18 @@
   "cats": [
     {
       "id": "1",
-      "ic": 123,
-      "ready": false
+      "ic": 120,
+      "ready": true
     },
     {
-      "id": "3",
-      "ic": 98,
-      "ready": false
+      "id": "4",
+      "ic": 89,
+      "ready": true
+    },
+    {
+      "id": "5",
+      "ic": 4,
+      "ready": true
     }
   ]
 }
