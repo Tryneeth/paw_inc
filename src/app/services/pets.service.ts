@@ -30,5 +30,15 @@ export class PetsService {
     return this.http.post(this.dogsUrl, dog);
   }
 
+  deleteDog(id){
+    return this.http.delete(`${this.dogsUrl}/${id}`);
+  }
+
+  deleteCat(id){
+    return this.http.delete(`${this.catsUrl}/${id}`);
+  }
+
+ 
+
 
 }

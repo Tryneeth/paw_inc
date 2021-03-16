@@ -27,7 +27,7 @@ export class PetsComponent implements OnInit {
   dogs:string[];
 
   constructor(
-    private pets:PetsService
+    private _pets:PetsService
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class PetsComponent implements OnInit {
   }
 
   fetchAllCats(){
-    this.pets.getAllCats().subscribe((data)=>{
+    this._pets.getAllCats().subscribe((data)=>{
       console.log(data);
       this.cats=data;
     }, (error)=>{
@@ -45,12 +45,26 @@ export class PetsComponent implements OnInit {
   }
 
     fetchAllDogs(){
-    this.pets.getAllDogs().subscribe((data)=>{
+    this._pets.getAllDogs().subscribe((data)=>{
       console.log(data);
       this.dogs=data;
     }, (error)=>{
       console.log(error);
     })
   }
+
+
+  deleteDog(id){
+    this._pets.deleteDog(id).subscribe((data)=>{
+      this.fetchAllDogs();
+    }, (error)=>console.log(error))
+  }
+
+    deleteCat(id){
+    this._pets.deleteCat(id).subscribe((data)=>{
+      this.fetchAllCats();
+    }, (error)=>console.log(error))
+  }
+
 
 }
