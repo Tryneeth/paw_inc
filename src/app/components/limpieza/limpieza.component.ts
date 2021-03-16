@@ -74,6 +74,19 @@ export class LimpiezaComponent implements OnInit {
     
   }
 
+  cleanAllCats(){
+    return this.catsCleansing.forEach((cat)=>{
+      this.cleanCat(cat)
+    })
+  }
+
+  cleanAllDogs(){
+    return this.dogsCleansing.forEach((dog)=>{
+      this.cleanDog(dog)
+    })
+  }
+
+
 
   
 

@@ -35,7 +35,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumnsCats"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumnsCats;"></tr>
     </table>
-    <button class="clean-button" mat-raised-button color="primary">Clean All</button>
+    <button class="clean-button" mat-raised-button color="primary" (click)="cleanAllCats()">Clean All</button>
     <button class="clean-button" mat-stroked-button color="primary">Send to Cleansed Center</button>
 
 
@@ -80,7 +80,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsDogs;"></tr>
     </table>
 
-    <button class="clean-button" mat-raised-button color="primary">Clean All</button>
+    <button class="clean-button" mat-raised-button color="primary" (click)="cleanAllDogs()">Clean All</button>
     <button class="clean-button" mat-stroked-button color="primary">Send to Cleansed Center</button>
 
 
