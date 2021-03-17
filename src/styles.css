@@ -10,6 +10,9 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+
+/* ?COMPONENTES DE REGISTRO CAT AND DOG */
+
 .pet-form .form {
     width: 25%;
     display: flex;
@@ -43,3 +46,54 @@ body {
 .pet-form .form h3 {
     letter-spacing: 2px;
 }
+
+
+/* ? END  */
+
+
+/* ? COMPONENTES DE LOS CENTROS */
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.center .clean-button {
+    margin: 50px 0;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.center table button {
+    transition: all 0.5s ease;
+}
+
+.center table button:hover {
+    color: white;
+    background-color: crimson;
+}
+
+.center h3 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+
+.center>h3 span {
+    font-size: 2em;
+    font-weight: bold;
+    color: crimson;
+}
+
+.dogs-content {
+    margin-top: 100px;
+}
+
+
+/* ? END */

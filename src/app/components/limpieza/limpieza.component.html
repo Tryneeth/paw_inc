@@ -1,4 +1,4 @@
-<section>
+<section class="center">
     <h3> <span>C</span>ats</h3>
     <p *ngIf="catsCleansing.length===0">No Cats to be Treated</p>
 
@@ -54,7 +54,7 @@
 
 
 
-<section class="dogs-content">
+<section class="dogs-content center">
     <h3> <span>D</span>ogs</h3>
     <p *ngIf="dogsCleansing.length===0">No Dogs to be Treated</p>
     <table *ngIf="dogsCleansing.length>0" mat-table [dataSource]="dogsCleansing" class="mat-elevation-z8">

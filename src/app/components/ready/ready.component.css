@@ -1,41 +1,4 @@
-table {
-    width: 80%;
-    margin: 0 auto;
-}
 
-.dogs-content {
-    margin-top: 100px;
-}
 
-.clean-button {
-    margin-top: 50px;
-}
 
-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 50px;
-}
 
-section table button {
-    transition: all 0.5s ease;
-}
-
-section table button:hover {
-    color: white;
-    background-color: crimson;
-}
-
-section h3 {
-    text-transform: uppercase;
-    font-size: 1.4em;
-    letter-spacing: 2px;
-}
-
-section>h3 span {
-    font-size: 2em;
-    font-weight: bold;
-    color: crimson;
-}
