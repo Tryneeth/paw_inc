@@ -39,7 +39,7 @@ export class DogFormComponent implements OnInit {
   sendForm(event:Event){
     event.preventDefault();
     if(this.formulario.valid){
-      console.log(this.formulario.value);
+   
       let tempDog=this.formulario.value;
       tempDog={...tempDog, ready:false};
       this.dog=tempDog;

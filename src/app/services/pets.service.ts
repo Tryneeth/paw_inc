@@ -58,7 +58,7 @@ export class PetsService {
     let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.catsUrl}/${id}`).subscribe(); 
-      console.log(id);
+    
     });
   }
 
@@ -66,7 +66,7 @@ export class PetsService {
     let ids=dogs.map((dog)=>dog.id);
     return ids.forEach(id => {
       this.http.delete(`${this.dogsUrl}/${id}`).subscribe(); 
-      console.log(id);
+    
     });
   }
 
@@ -74,7 +74,7 @@ export class PetsService {
     let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.cleansing_catsURL}/${id}`).subscribe(); 
-      console.log(id);
+     
     });
   }
 
@@ -82,7 +82,7 @@ export class PetsService {
     let ids=dogs.map((dog)=>dog.id);
     return ids.forEach(id => {
       this.http.delete(`${this.cleansing_dogsURL}/${id}`).subscribe(); 
-      console.log(id);
+      
     });
   }
 

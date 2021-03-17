@@ -39,7 +39,7 @@ export class PetsComponent implements OnInit {
 
   fetchAllCats(){
      this._pets.getAllCats().subscribe((data:any)=>{
-      console.log(data);
+     
       if(data){
         this.cats=data;
         this.notReadyCats=this.cats.filter((cat)=>cat.ready===false);
@@ -57,7 +57,7 @@ export class PetsComponent implements OnInit {
 
     fetchAllDogs(){
     this._pets.getAllDogs().subscribe((data:any)=>{
-      console.log(data);
+     
       if(data){
       this.dogs=data;
       this.notReadyDogs=this.dogs.filter((dog)=>dog.ready===false);

@@ -40,7 +40,7 @@ export class CatFormComponent implements OnInit {
   sendForm(event:Event){
     event.preventDefault();
     if(this.formulario.valid){
-      console.log(this.formulario.value);
+     
       let tempCat=this.formulario.value;
       tempCat={...tempCat, ready:false};
       this.cat=tempCat;
