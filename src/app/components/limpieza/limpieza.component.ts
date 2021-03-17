@@ -24,13 +24,13 @@ export class LimpiezaComponent implements OnInit {
 
 
   fetchAllCats(){
-    this._pets.getCatsCleansing().subscribe((data:any)=>{
+   this._pets.getCatsCleansing().subscribe((data:any)=>{
       this.catsCleansing=data;
     })
   }
 
   fetchAllDogs(){
-    this._pets.getDogsCleansing().subscribe((data:any)=>{
+   this._pets.getDogsCleansing().subscribe((data:any)=>{
       this.dogsCleansing=data;
     })
   }

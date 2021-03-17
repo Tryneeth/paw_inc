@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { PetsService } from '../../services/pets.service';
 
 
@@ -35,11 +36,18 @@ export class PetsComponent implements OnInit {
   }
 
   fetchAllCats(){
-    this._pets.getAllCats().subscribe((data:any)=>{
+     this._pets.getAllCats().subscribe((data:any)=>{
       console.log(data);
-      this.cats=data;
-      this.notReadyCats=this.cats.filter((cat)=>cat.ready===false);
-      this.readyCats=this.cats.filter((cat)=>cat.ready===true);
+      if(data){
+        this.cats=data;
+        this.notReadyCats=this.cats.filter((cat)=>cat.ready===false);
+        this.readyCats=this.cats.filter((cat)=>cat.ready===true);
+      }else{
+        this.cats=[];
+        this.notReadyCats=[];
+        this.readyCats=[];
+      }
+    
     }, (error)=>{
       console.log(error);
     })
@@ -48,9 +56,15 @@ export class PetsComponent implements OnInit {
     fetchAllDogs(){
     this._pets.getAllDogs().subscribe((data:any)=>{
       console.log(data);
+      if(data){
       this.dogs=data;
       this.notReadyDogs=this.dogs.filter((dog)=>dog.ready===false);
       this.readyDogs=this.dogs.filter((dog)=>dog.ready===true);
+      }else{
+        this.dogs=[];
+        this.notReadyDogs=[];
+        this.readyDogs=[];
+      }
     }, (error)=>{
       console.log(error);
     })
@@ -58,23 +72,73 @@ export class PetsComponent implements OnInit {
 
 
   deleteDog(id){
-    this._pets.deleteDogAdoption(id).subscribe((data)=>{
-      this.fetchAllDogs();
-    }, (error)=>console.log(error))
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._pets.deleteDogAdoption(id).subscribe((data)=>{
+          Swal.fire(
+            'Deleted!',
+            'Cat has been deleted.',
+            'success'
+          )
+          this.fetchAllDogs();
+        }, (error)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+         
+          })
+        })
+      
+      }
+    })
+   
   }
 
     deleteCat(id){
-    this._pets.deleteCatAdoption(id).subscribe((data)=>{
-      this.fetchAllCats();
-    }, (error)=>console.log(error))
+      Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this._pets.deleteCatAdoption(id).subscribe((data)=>{
+            Swal.fire(
+              'Deleted!',
+              'Dog has been deleted.',
+              'success'
+            )
+            this.fetchAllCats();
+          }, (error)=>{
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              
+            })
+          })
+       
+        }
+      })
+ 
   }
 
   sendCatsToCleansed(){
     if(this.notReadyCats.length>0){
       this._pets.registerCatsCleansing(this.notReadyCats)
       this._pets.deleteCatsAdoption(this.notReadyCats);
-      this.notReadyCats=[];
-      this.fetchAllCats();
+      let tempCats=[...this.cats];
+      this.cats=tempCats.filter((cat)=>cat.ready===true);
     }else{
       return null;
     }
@@ -84,8 +148,8 @@ sendDogsToCleansed(){
   if(this.notReadyDogs.length>0){
     this._pets.registerDogsCleansing(this.notReadyDogs)
     this._pets.deleteDogsAdoption(this.notReadyDogs);
-    this.notReadyDogs=[];
-    this.fetchAllDogs();
+    let tempDogs=[...this.dogs];
+    this.dogs=tempDogs.filter((dog)=>dog.ready===true);
   }else{
     return null;
   }
