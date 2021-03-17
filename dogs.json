@@ -3,6 +3,10 @@
     {
       "id": "2",
       "ready": true
+    },
+    {
+      "id": "78",
+      "ready": false
     }
   ]
 }

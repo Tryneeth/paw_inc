@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { PetsService } from '../../services/pets.service';
 
 
@@ -44,9 +45,21 @@ export class CatFormComponent implements OnInit {
       this.cat=tempCat;
 
       this._pets.registerCat(this.cat).subscribe((data)=>{
-        console.log('Good');
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'The cat has been registered',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigate(['adoption_center/pets_list']);
-      }, (error)=>console.log(error));
+      }, (error)=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+      });
 
       
 

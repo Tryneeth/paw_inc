@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PetsService } from 'src/app/services/pets.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dog-form',
@@ -42,9 +43,22 @@ export class DogFormComponent implements OnInit {
       tempDog={...tempDog, ready:false};
       this.dog=tempDog;
       this._pets.registerDog(this.dog).subscribe((data)=>{
-        console.log('Good');
+        Swal.fire({
+          position:'center',
+          icon: 'success',
+          title: 'The dog has been registered',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
         this.router.navigate(['adoption_center/pets_list']);
-      }, (error)=>console.log(error));
+      }, (error)=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+      });
 
       
 
