@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Cat } from 'src/app/interfaces/cat.model';
 import Swal from 'sweetalert2';
 import { PetsService } from '../../services/pets.service';
 
@@ -13,7 +14,7 @@ import { PetsService } from '../../services/pets.service';
 export class CatFormComponent implements OnInit {
 
   formulario:FormGroup;
-  cat;
+  cat:Cat;
   
 
   constructor(

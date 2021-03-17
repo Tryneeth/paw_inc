@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Dog } from 'src/app/interfaces/dog.model';
 import { PetsService } from 'src/app/services/pets.service';
 import Swal from 'sweetalert2';
 
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 export class DogFormComponent implements OnInit {
 
   formulario:FormGroup;
-  dog;
+  dog:Dog;
   
 
   constructor(

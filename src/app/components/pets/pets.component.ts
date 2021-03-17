@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cat } from 'src/app/interfaces/cat.model';
+import { Dog } from 'src/app/interfaces/dog.model';
 import Swal from 'sweetalert2';
 import { PetsService } from '../../services/pets.service';
 
@@ -18,13 +20,13 @@ export class PetsComponent implements OnInit {
   displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
  
 
-  cats=[];
-  notReadyCats=[];
-  readyCats=[];
+  cats:Cat[]=[];
+  notReadyCats:Cat[]=[];
+  readyCats:Cat[]=[];
 
-  dogs=[];
-  notReadyDogs=[];
-  readyDogs=[];
+  dogs:Dog[]=[];
+  notReadyDogs:Dog[]=[];
+  readyDogs:Dog[]=[];
 
   constructor(
     private _pets:PetsService

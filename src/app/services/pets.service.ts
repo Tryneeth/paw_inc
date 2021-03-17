@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Cat } from '../interfaces/cat.model';
+import { Dog } from '../interfaces/dog.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetsService {
 
-  catsAdoption:string[];
+ 
 
   catsUrl:string='http://localhost:3000/cats';
   dogsUrl:string='http://localhost:1000/dogs';
@@ -19,43 +21,40 @@ export class PetsService {
 
 
   getAllCats(){
-    return this.http.get(this.catsUrl);
+    return this.http.get<Cat[]>(this.catsUrl);
   }
 
   getAllDogs(){
-    return this.http.get(this.dogsUrl);
+    return this.http.get<Dog[]>(this.dogsUrl);
   }
 
-  registerCat(cat){
+  registerCat(cat:Cat){
     return this.http.post(this.catsUrl,cat);
   }
 
-  registerDog(dog){
+  registerDog(dog:Dog){
     return this.http.post(this.dogsUrl, dog);
   }
 
-  deleteDogAdoption(id){
+  deleteDogAdoption(id:string){
     return this.http.delete(`${this.dogsUrl}/${id}`);
   }
 
-  deleteCatAdoption(id){
+  deleteCatAdoption(id:string){
     return this.http.delete(`${this.catsUrl}/${id}`);
   }
 
-  deleteCatCleansing(id){
+  deleteCatCleansing(id:string){
     return this.http.delete(`${this.cleansing_catsURL}/${id}`);
   }
 
-  deleteDogCleansing(id){
+  deleteDogCleansing(id:string){
     return this.http.delete(`${this.cleansing_dogsURL}/${id}`);
   }
 
-  storeCats(cats){
-    this.catsAdoption=cats;
-    console.log(this.catsAdoption);
-  }
 
-  deleteCatsAdoption(cats){
+
+  deleteCatsAdoption(cats:Cat[]){
     let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.catsUrl}/${id}`).subscribe(); 
@@ -63,7 +62,7 @@ export class PetsService {
     });
   }
 
-  deleteDogsAdoption(dogs){
+  deleteDogsAdoption(dogs:Dog[]){
     let ids=dogs.map((dog)=>dog.id);
     return ids.forEach(id => {
       this.http.delete(`${this.dogsUrl}/${id}`).subscribe(); 
@@ -71,7 +70,7 @@ export class PetsService {
     });
   }
 
-  deleteCatsCleansing(cats){
+  deleteCatsCleansing(cats:Cat[]){
     let ids=cats.map((cat)=>cat.id);
     return ids.forEach(id => {
       this.http.delete(`${this.cleansing_catsURL}/${id}`).subscribe(); 
@@ -79,7 +78,7 @@ export class PetsService {
     });
   }
 
-  deleteDogsCleansing(dogs){
+  deleteDogsCleansing(dogs:Dog[]){
     let ids=dogs.map((dog)=>dog.id);
     return ids.forEach(id => {
       this.http.delete(`${this.cleansing_dogsURL}/${id}`).subscribe(); 
@@ -88,36 +87,36 @@ export class PetsService {
   }
 
 
-  registerCatsCleansing(cats){
+  registerCatsCleansing(cats:Cat[]){
     return cats.forEach(cat => {
       this.http.post(this.cleansing_catsURL, cat).subscribe();
     });
   }
 
-  registerDogsCleansing(dogs){
+  registerDogsCleansing(dogs:Dog[]){
     return dogs.forEach(dog => {
       this.http.post(this.cleansing_dogsURL, dog).subscribe();
     });
   }
 
-  registerCatsAdoption(cats){
+  registerCatsAdoption(cats:Cat[]){
     return cats.forEach(cat => {
       this.http.post(this.catsUrl, cat).subscribe();
     });
   }
 
-  registerDogsAdoption(dogs){
+  registerDogsAdoption(dogs:Dog[]){
     return dogs.forEach(dog => {
       this.http.post(this.dogsUrl, dog).subscribe();
     });
   }
 
   getCatsCleansing(){
-    return this.http.get(this.cleansing_catsURL);
+    return this.http.get<Cat[]>(this.cleansing_catsURL);
   }
 
   getDogsCleansing(){
-    return this.http.get(this.cleansing_dogsURL);
+    return this.http.get<Dog[]>(this.cleansing_dogsURL);
   }
 
   updateCatState(id:string, update){

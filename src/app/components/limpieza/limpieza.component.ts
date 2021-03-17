@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cat } from 'src/app/interfaces/cat.model';
+import { Dog } from 'src/app/interfaces/dog.model';
 import { PetsService } from 'src/app/services/pets.service';
 import Swal from 'sweetalert2';
 
@@ -9,8 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class LimpiezaComponent implements OnInit {
 
-  catsCleansing:string[]=[];
-  dogsCleansing:string[]=[];
+  catsCleansing:Cat[]=[];
+  dogsCleansing:Dog[]=[];
   displayedColumnsCats: string[] = ['id', 'ic', 'state', 'actions'];
   displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
 
@@ -25,18 +27,18 @@ export class LimpiezaComponent implements OnInit {
 
 
   fetchAllCats(){
-   this._pets.getCatsCleansing().subscribe((data:any)=>{
+   this._pets.getCatsCleansing().subscribe((data)=>{
       this.catsCleansing=data;
     })
   }
 
   fetchAllDogs(){
-   this._pets.getDogsCleansing().subscribe((data:any)=>{
+   this._pets.getDogsCleansing().subscribe((data)=>{
       this.dogsCleansing=data;
     })
   }
 
-  deleteDog(id){
+  deleteDog(id:string){
     Swal.fire({
       title: 'Are you sure?',
       icon: 'warning',
@@ -66,7 +68,7 @@ export class LimpiezaComponent implements OnInit {
   
   }
 
-  deleteCat(id){
+  deleteCat(id:string){
     Swal.fire({
       title: 'Are you sure?',
      
@@ -98,7 +100,7 @@ export class LimpiezaComponent implements OnInit {
   }
 
  
-  cleanCat(cat){
+  cleanCat(cat:Cat){
     let updateCat={
      ...cat,
      ready:true
@@ -111,7 +113,7 @@ export class LimpiezaComponent implements OnInit {
     
   }
 
-  cleanDog(dog){
+  cleanDog(dog:Dog){
     let updateDog={
      ...dog,
      ready:true
