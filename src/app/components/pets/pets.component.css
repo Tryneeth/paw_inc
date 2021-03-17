@@ -3,12 +3,8 @@ table {
     margin: 0 auto;
 }
 
-.dogs-content {
-    margin-top: 100px;
-}
-
 .clean-button {
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 section {
@@ -16,6 +12,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 section table button {

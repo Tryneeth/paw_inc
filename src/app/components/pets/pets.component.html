@@ -1,6 +1,9 @@
 <section>
     <h3><span>C</span>ats</h3>
-    <table mat-table [dataSource]="cats" class="mat-elevation-z8">
+
+    <p *ngIf="cats.length===0">No Cats Registered</p>
+
+    <table *ngIf="cats.length>0" mat-table [dataSource]="cats" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -39,15 +42,17 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsCats;"></tr>
     </table>
 
-    <button class="clean-button" (click)="sendCatsToCleansed()" mat-raised-button>Send to Cleansed Center</button>
+    <button *ngIf="cats.length>0" class="clean-button" (click)="sendCatsToCleansed()" mat-raised-button>Send to Cleansed Center</button>
 
 
 </section>
 
 
-<section class="dogs-content">
+<section>
     <h3><span>D</span>ogs</h3>
-    <table mat-table [dataSource]="dogs" class="mat-elevation-z8">
+
+    <p *ngIf="dogs.length===0">No Dogs Registered</p>
+    <table *ngIf="dogs.length>0" mat-table [dataSource]="dogs" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
@@ -85,7 +90,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsDogs;"></tr>
     </table>
 
-    <button class="clean-button" mat-raised-button (click)="sendDogsToCleansed()">Send to Cleansed Center</button>
+    <button *ngIf="dogs.length>0" class="clean-button" mat-raised-button (click)="sendDogsToCleansed()">Send to Cleansed Center</button>
 
 
 </section>

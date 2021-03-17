@@ -8,8 +8,8 @@ import { PetsService } from 'src/app/services/pets.service';
 })
 export class LimpiezaComponent implements OnInit {
 
-  catsCleansing:string[];
-  dogsCleansing:string[];
+  catsCleansing:string[]=[];
+  dogsCleansing:string[]=[];
   displayedColumnsCats: string[] = ['id', 'ic', 'state', 'actions'];
   displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
 

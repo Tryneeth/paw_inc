@@ -1,6 +1,9 @@
 <section>
-    <h3>Cats</h3>
-    <table mat-table [dataSource]="readyCats" class="mat-elevation-z8">
+    <h3> <span>C</span>ats</h3>
+
+    <p *ngIf="readyCats.length===0">No Cats to be Adopted</p>
+
+    <table *ngIf="readyCats.length>0" mat-table [dataSource]="readyCats" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -31,8 +34,10 @@
 
 
 <section class="dogs-content">
-    <h3>Dogs</h3>
-    <table mat-table [dataSource]="readyDogs" class="mat-elevation-z8">
+    <h3> <span>D</span>ogs</h3>
+
+    <p *ngIf="readyDogs.length===0">No Dogs to be Adopted</p>
+    <table *ngIf="readyDogs.length>0" mat-table [dataSource]="readyDogs" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 

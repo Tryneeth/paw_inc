@@ -11,7 +11,7 @@
 
 .cat-form {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url(../../../assets/cat/cat.jpg) center/cover no-repeat !important;
     display: flex;
     align-items: center;

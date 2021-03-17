@@ -16,6 +16,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 section table button {
@@ -37,4 +38,12 @@ section>h3 span {
     font-size: 2em;
     font-weight: bold;
     color: crimson;
+}
+
+.button-actions {
+    margin-top: 20px;
+}
+
+.button-actions button {
+    margin: 10px;
 }

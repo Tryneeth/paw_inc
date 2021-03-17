@@ -12,8 +12,8 @@ export class ReadyComponent implements OnInit {
   displayedColumnsCats: string[] = ['id', 'ic'];
   displayedColumnsDogs: string[] = ['id', /* 'performance' */ ];
 
-  readyCats;
-  readyDogs;
+  readyCats=[];
+  readyDogs=[];
 
   constructor(
     private _pets:PetsService

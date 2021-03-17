@@ -1,16 +1,3 @@
 {
-  "dogs": [
-    {
-      "id": "1",
-      "ready": true
-    },
-    {
-      "id": "9999",
-      "ready": true
-    },
-    {
-      "id": "67",
-      "ready": true
-    }
-  ]
+  "dogs": []
 }
