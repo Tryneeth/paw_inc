@@ -1,11 +1,6 @@
 {
   "cats": [
     {
-      "id": "89",
-      "ic": 9,
-      "ready": true
-    },
-    {
       "id": "98",
       "ic": 1,
       "ready": true
