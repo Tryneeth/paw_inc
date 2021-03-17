@@ -1,6 +1,7 @@
 <section>
     <h3> <span>C</span>ats</h3>
     <p *ngIf="catsCleansing.length===0">No Cats to be Treated</p>
+
     <table *ngIf="catsCleansing.length>0" mat-table [dataSource]="catsCleansing" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.

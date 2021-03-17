@@ -9,7 +9,7 @@ import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdopcionComponent } from './components/adopcion/adopcion.component';
 import { LimpiezaComponent } from './components/limpieza/limpieza.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { CatFormComponent } from './components/cat-form/cat-form.component';
@@ -27,7 +27,7 @@ import { ReadyComponent } from './components/ready/ready.component';
     NavbarComponent,
     AdopcionComponent,
     LimpiezaComponent,
-    SidenavComponent,
+   
     CatFormComponent,
     PetsComponent,
     DogFormComponent,

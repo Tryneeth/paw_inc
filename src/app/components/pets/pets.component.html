@@ -42,7 +42,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsCats;"></tr>
     </table>
 
-    <button *ngIf="cats.length>0" class="clean-button" (click)="sendCatsToCleansed()" mat-raised-button>Send to Cleansed Center</button>
+    <button *ngIf="cats.length>0" class="clean-button" (click)="sendCatsToCleansed()" mat-raised-button>Send to Cleansing Center</button>
 
 
 </section>
@@ -90,7 +90,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsDogs;"></tr>
     </table>
 
-    <button *ngIf="dogs.length>0" class="clean-button" mat-raised-button (click)="sendDogsToCleansed()">Send to Cleansed Center</button>
+    <button *ngIf="dogs.length>0" class="clean-button" mat-raised-button (click)="sendDogsToCleansed()">Send to Cleansing Center</button>
 
 
 </section>
