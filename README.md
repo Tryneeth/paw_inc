@@ -1,27 +1,40 @@
-# MyApp24
+Paw Incorporative
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+Versión 1 del Proyecto:
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Tenemos una página principal que presenta brevemente la compañía
+- La compañía posee un centro de adopción y un centro de limpieza para el tratamiento de los animales.
 
-## Code scaffolding
+- Centro de Adopción:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Desde este centro se registrar los nuevos perros y gatos de nuevo ingreso en el centro, con sus particulares características.
 
-## Build
+Todos los animales de nuevo registro necesitan obligatoriamente pasar por el centro de limpieza para luego poder ser adoptados. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Cuando los animales pasan por el centro de limpieza son enviados al "Healthy", donde ya tienen la posibilidad de ser adoptados.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+- Centro de Limpieza:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este centro es el encargado de aplicar las acciones de tratamiento a los animales, puede aplicarselas a todos o a aquellos animales seleccionados
+
+Luego de que se apliquen las acciones los animales podrían ser enviados nuevamente al centro de adopción para posteriores eventos.
+
+- Bases de Datos empleando Json-Server:
+
+Para el manejo de los datos referentes a las mascotas de la compañía se crearon 4 bases de datos:
+1. cats.json ----> Run in port 3000
+2. dogs.json   ----> Run in port 1000
+3. .cleansing_cats.json  ----> Run in port 5000
+3. .cleansing_dogs.json  ----> Run in port 7000
+
+Las dos primeras almacenan los gatos y perros del centro de adopción, y las otras almacenan los gatos y perros del centro de limpieza.
+
+- Bases de Datos empleando Json-Server:
+
+Se renderizan aquellas mascotas que están listas para ser adoptadas
+
