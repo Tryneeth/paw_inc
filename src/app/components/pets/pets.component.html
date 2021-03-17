@@ -1,5 +1,5 @@
 <section>
-    <h3>Cats</h3>
+    <h3><span>C</span>ats</h3>
     <table mat-table [dataSource]="cats" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -27,8 +27,11 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
-                <button mat-raised-button color="accent" (click)="deleteCat(element.id)">Delete</button>
-                <button mat-raised-button color="primary" style="margin-left: 20px;" *ngIf="element.state==='needed'">Treat</button>
+                <button mat-raised-button (click)="deleteCat(element.id)">
+                    <mat-icon>delete</mat-icon>
+                    Delete
+                </button>
+
             </td>
         </ng-container>
 
@@ -36,14 +39,14 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsCats;"></tr>
     </table>
 
-    <button class="clean-button" (click)="sendCatsToCleansed()" mat-stroked-button color="primary">Send to Cleansed Center</button>
+    <button class="clean-button" (click)="sendCatsToCleansed()" mat-raised-button>Send to Cleansed Center</button>
 
 
 </section>
 
 
 <section class="dogs-content">
-    <h3>Dogs</h3>
+    <h3><span>D</span>ogs</h3>
     <table mat-table [dataSource]="dogs" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -70,8 +73,11 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
-                <button mat-raised-button color="accent" (click)="deleteDog(element.id)">Delete</button>
-                <button mat-raised-button color="primary" style="margin-left: 20px;" *ngIf="element.state==='needed'">Treat</button>
+                <button mat-raised-button (click)="deleteDog(element.id)">
+                    <mat-icon>delete</mat-icon>
+                    Delete
+                </button>
+
             </td>
         </ng-container>
 
@@ -79,7 +85,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumnsDogs;"></tr>
     </table>
 
-    <button class="clean-button" mat-stroked-button color="primary" (click)="sendDogsToCleansed()">Send to Cleansed Center</button>
+    <button class="clean-button" mat-raised-button (click)="sendDogsToCleansed()">Send to Cleansed Center</button>
 
 
 </section>
