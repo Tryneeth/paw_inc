@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PetsService } from 'src/app/services/pets.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-limpieza',
@@ -36,15 +37,64 @@ export class LimpiezaComponent implements OnInit {
   }
 
   deleteDog(id){
-    this._pets.deleteDogCleansing(id).subscribe((data)=>{
-      this.fetchAllDogs();
-    }, (error)=>console.log(error))
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._pets.deleteDogCleansing(id).subscribe((data)=>{
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+          this.fetchAllDogs();
+        }, (error)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        })
+       
+      }
+    })
+  
   }
 
   deleteCat(id){
-    this._pets.deleteCatCleansing(id).subscribe((data)=>{
-      this.fetchAllCats();
-    }, (error)=>console.log(error))
+    Swal.fire({
+      title: 'Are you sure?',
+     
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._pets.deleteCatCleansing(id).subscribe((data)=>{
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+          this.fetchAllCats();
+        }, (error)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        })
+      
+      }
+    })
+   
   }
 
  
