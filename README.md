@@ -34,7 +34,7 @@ Para el manejo de los datos referentes a las mascotas de la compañía se crearo
 
 Las dos primeras almacenan los gatos y perros del centro de adopción, y las otras almacenan los gatos y perros del centro de limpieza.
 
-- Bases de Datos empleando Json-Server:
+- Healthy:
 
 Se renderizan aquellas mascotas que están listas para ser adoptadas
 
