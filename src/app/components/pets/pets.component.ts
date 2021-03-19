@@ -17,7 +17,7 @@ import { PetsService } from '../../services/pets.service';
 export class PetsComponent implements OnInit {
 
   displayedColumnsCats: string[] = ['id', 'ic', 'state', 'actions'];
-  displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
+  displayedColumnsDogs: string[] = ['id', 'skills', 'state', 'actions'];
  
 
   cats:Cat[]=[];
@@ -86,7 +86,7 @@ export class PetsComponent implements OnInit {
         this._pets.deleteDogAdoption(id).subscribe((data)=>{
           Swal.fire(
             'Deleted!',
-            'Cat has been deleted.',
+            'Dog has been deleted.',
             'success'
           )
           this.fetchAllDogs();
@@ -117,7 +117,7 @@ export class PetsComponent implements OnInit {
           this._pets.deleteCatAdoption(id).subscribe((data)=>{
             Swal.fire(
               'Deleted!',
-              'Dog has been deleted.',
+              'Cat has been deleted.',
               'success'
             )
             this.fetchAllCats();
