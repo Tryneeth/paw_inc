@@ -12,7 +12,7 @@ export class ReadyComponent implements OnInit {
 
 
   displayedColumnsCats: string[] = ['id', 'ic'];
-  displayedColumnsDogs: string[] = ['id', /* 'performance' */ ];
+  displayedColumnsDogs: string[] = ['id',  'skills' ];
 
   readyCats:Cat[]=[];
   readyDogs:Dog[]=[];

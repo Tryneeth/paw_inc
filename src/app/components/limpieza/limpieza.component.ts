@@ -14,7 +14,7 @@ export class LimpiezaComponent implements OnInit {
   catsCleansing:Cat[]=[];
   dogsCleansing:Dog[]=[];
   displayedColumnsCats: string[] = ['id', 'ic', 'state', 'actions'];
-  displayedColumnsDogs: string[] = ['id', /* 'performance' */ 'state', 'actions'];
+  displayedColumnsDogs: string[] = ['id',  'skills','state', 'actions'];
 
   constructor(
     private _pets:PetsService
@@ -51,7 +51,7 @@ export class LimpiezaComponent implements OnInit {
         this._pets.deleteDogCleansing(id).subscribe((data)=>{
           Swal.fire(
             'Deleted!',
-            'Your file has been deleted.',
+            'Dog has been deleted.',
             'success'
           )
           this.fetchAllDogs();
@@ -82,7 +82,7 @@ export class LimpiezaComponent implements OnInit {
         this._pets.deleteCatCleansing(id).subscribe((data)=>{
           Swal.fire(
             'Deleted!',
-            'Your file has been deleted.',
+            'Cat has been deleted.',
             'success'
           )
           this.fetchAllCats();

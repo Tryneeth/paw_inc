@@ -15,10 +15,6 @@ export class DogFormComponent implements OnInit {
   formulario:FormGroup;
   dog:Dog;
 
-  rollOver:boolean;
-  sit:boolean;
-  layDown:boolean;
-  bark:boolean;
   
   
 
@@ -36,9 +32,9 @@ export class DogFormComponent implements OnInit {
   createForm(){
     this.formulario=this.fb.group({
       id:['', [Validators.required]],
-      actions:this.fb.array([])
+      skills:this.fb.array([])
     
-     /*  performance:this.fb.array([]) */
+   
     })
   }
 
@@ -72,7 +68,7 @@ export class DogFormComponent implements OnInit {
   }
 
   onChange(name:string, isChecked:boolean){
-    const actions=this.formulario.controls.actions as FormArray;
+    const actions=this.formulario.controls.skills as FormArray;
     if(isChecked){
       actions.push(new FormControl(name));}
       else{

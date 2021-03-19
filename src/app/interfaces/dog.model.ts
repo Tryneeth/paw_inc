@@ -1,5 +1,5 @@
 export interface Dog{
     id:string;
     ready:boolean;
-    actions:string[];
+    skills:string[];
 }
