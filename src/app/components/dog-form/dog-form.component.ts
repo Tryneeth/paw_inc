@@ -14,6 +14,12 @@ export class DogFormComponent implements OnInit {
 
   formulario:FormGroup;
   dog:Dog;
+
+  rollOver;
+  sit;
+  layDown;
+  bark;
+  
   
 
   constructor(
@@ -39,6 +45,7 @@ export class DogFormComponent implements OnInit {
   sendForm(event:Event){
     event.preventDefault();
     if(this.formulario.valid){
+      console.log(this.rollOver,this.sit, this.layDown,this.bark )
    
       let tempDog=this.formulario.value;
       tempDog={...tempDog, ready:false};

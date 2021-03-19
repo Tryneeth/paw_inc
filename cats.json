@@ -1,23 +1,13 @@
 {
   "cats": [
     {
-      "id": "98",
-      "ic": 1,
-      "ready": true
-    },
-    {
-      "id": "1",
-      "ic": 12,
-      "ready": true
-    },
-    {
-      "id": "10",
-      "ic": 10,
-      "ready": true
-    },
-    {
       "id": "9090",
       "ic": 1,
+      "ready": true
+    },
+    {
+      "id": "1998",
+      "ic": 98,
       "ready": true
     }
   ]
