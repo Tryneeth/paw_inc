@@ -7,6 +7,20 @@
 
         </mat-form-field>
 
+        <section class="dog-actions">
+            <h4>Actions</h4>
+            <mat-checkbox class="example-margin" (change)="onChange('roll over', $event.checked)">Roll Over</mat-checkbox>
+            <mat-checkbox class="example-margin" (change)="onChange('sit', $event.checked)">Sit</mat-checkbox>
+            <mat-checkbox class="example-margin" (change)="onChange('lay down', $event.checked)">Lay Down</mat-checkbox>
+            <mat-checkbox class="example-margin" (change)="onChange('bark', $event.checked)">Bark</mat-checkbox>
+
+
+
+
+
+
+        </section>
+
 
 
         <button type="submit" mat-raised-button>Register</button>

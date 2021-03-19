@@ -7,6 +7,49 @@
     {
       "id": "2000",
       "ready": true
+    },
+    {
+      "id": "123",
+      "ready": false
+    },
+    {
+      "id": "121212",
+      "name": [
+        "roll over",
+        "lay down"
+      ],
+      "ready": false
+    },
+    {
+      "id": "676767",
+      "name": [],
+      "ready": false
+    },
+    {
+      "id": "1212127878",
+      "name": [
+        "roll over",
+        "sit"
+      ],
+      "ready": false
+    },
+    {
+      "id": "1212121212",
+      "actions": [],
+      "ready": false
+    },
+    {
+      "id": "999999999999",
+      "actions": [],
+      "ready": false
+    },
+    {
+      "id": "gordon",
+      "actions": [
+        "roll over",
+        "bark"
+      ],
+      "ready": false
     }
   ]
 }

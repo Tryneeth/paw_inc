@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Dog } from 'src/app/interfaces/dog.model';
 import { PetsService } from 'src/app/services/pets.service';
@@ -15,10 +15,10 @@ export class DogFormComponent implements OnInit {
   formulario:FormGroup;
   dog:Dog;
 
-  rollOver;
-  sit;
-  layDown;
-  bark;
+  rollOver:boolean;
+  sit:boolean;
+  layDown:boolean;
+  bark:boolean;
   
   
 
@@ -36,6 +36,7 @@ export class DogFormComponent implements OnInit {
   createForm(){
     this.formulario=this.fb.group({
       id:['', [Validators.required]],
+      actions:this.fb.array([])
     
      /*  performance:this.fb.array([]) */
     })
@@ -45,7 +46,7 @@ export class DogFormComponent implements OnInit {
   sendForm(event:Event){
     event.preventDefault();
     if(this.formulario.valid){
-      console.log(this.rollOver,this.sit, this.layDown,this.bark )
+     console.log(this.formulario.value);
    
       let tempDog=this.formulario.value;
       tempDog={...tempDog, ready:false};
@@ -67,11 +68,25 @@ export class DogFormComponent implements OnInit {
           text: 'Something went wrong!',
         })
       });
-
-      
-
     }
   }
 
-}
+  onChange(name:string, isChecked:boolean){
+    const actions=this.formulario.controls.actions as FormArray;
+    if(isChecked){
+      actions.push(new FormControl(name));}
+      else{
+        const index=actions.controls.findIndex(x=>x.value===name);
+        actions.removeAt(index);
+      }
+    }
+
+
+
+  }
+
+  
+
+
+
 
