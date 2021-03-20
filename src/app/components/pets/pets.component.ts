@@ -138,10 +138,10 @@ export class PetsComponent implements OnInit {
   sendCatsToCleansed(){
     if(this.notReadyCats.length>0){
       this.notReadyCats.forEach((cat)=>{
-        console.log('Hola Mundo');
+      
           this._pets.registerCatCleansing(cat).subscribe((data)=>{
            this._pets.deleteCatAdoption(cat.id).subscribe((data)=>{
-            console.log('Success');
+           
             let tempCats=[...this.cats];
             this.cats=tempCats.filter((cat)=>cat.ready===true);
           }, (error)=>{
@@ -162,10 +162,10 @@ sendDogsToCleansed(){
   
 
     this.notReadyDogs.forEach((dog)=>{
-      console.log('Hola Mundo');
+     
         this._pets.registerDogCleansing(dog).subscribe((data)=>{
          this._pets.deleteDogAdoption(dog.id).subscribe((data)=>{
-          console.log('Success');
+       
           let tempDogs=[...this.dogs];
           this.dogs=tempDogs.filter((dog)=>dog.ready===true);
         }, (error)=>{
