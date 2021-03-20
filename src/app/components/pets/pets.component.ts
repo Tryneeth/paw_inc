@@ -137,10 +137,20 @@ export class PetsComponent implements OnInit {
 
   sendCatsToCleansed(){
     if(this.notReadyCats.length>0){
-      this._pets.registerCatsCleansing(this.notReadyCats)
-      this._pets.deleteCatsAdoption(this.notReadyCats);
-      let tempCats=[...this.cats];
-      this.cats=tempCats.filter((cat)=>cat.ready===true);
+      this.notReadyCats.forEach((cat)=>{
+        console.log('Hola Mundo');
+          this._pets.registerCatCleansing(cat).subscribe((data)=>{
+           this._pets.deleteCatAdoption(cat.id).subscribe((data)=>{
+            console.log('Success');
+            let tempCats=[...this.cats];
+            this.cats=tempCats.filter((cat)=>cat.ready===true);
+          }, (error)=>{
+            console.log('Error');
+          }) 
+        }, (error)=>{
+          console.log('Error')
+        })
+      })
     }else{
       return null;
     }
@@ -148,10 +158,23 @@ export class PetsComponent implements OnInit {
 
 sendDogsToCleansed(){
   if(this.notReadyDogs.length>0){
-    this._pets.registerDogsCleansing(this.notReadyDogs)
-    this._pets.deleteDogsAdoption(this.notReadyDogs);
-    let tempDogs=[...this.dogs];
-    this.dogs=tempDogs.filter((dog)=>dog.ready===true);
+
+  
+
+    this.notReadyDogs.forEach((dog)=>{
+      console.log('Hola Mundo');
+        this._pets.registerDogCleansing(dog).subscribe((data)=>{
+         this._pets.deleteDogAdoption(dog.id).subscribe((data)=>{
+          console.log('Success');
+          let tempDogs=[...this.dogs];
+          this.dogs=tempDogs.filter((dog)=>dog.ready===true);
+        }, (error)=>{
+          console.log('Error');
+        }) 
+      }, (error)=>{
+        console.log('Error')
+      })
+    })
   }else{
     return null;
   }

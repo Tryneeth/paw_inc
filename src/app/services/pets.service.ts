@@ -54,61 +54,26 @@ export class PetsService {
 
 
 
-  deleteCatsAdoption(cats:Cat[]){
-    let ids=cats.map((cat)=>cat.id);
-    return ids.forEach(id => {
-      this.http.delete(`${this.catsUrl}/${id}`).subscribe(); 
-    
-    });
+
+
+
+
+
+  registerCatCleansing(cat:Cat){
+   return this.http.post(this.cleansing_catsURL, cat);
+  
   }
 
-  deleteDogsAdoption(dogs:Dog[]){
-    let ids=dogs.map((dog)=>dog.id);
-    return ids.forEach(id => {
-      this.http.delete(`${this.dogsUrl}/${id}`).subscribe(); 
-    
-    });
+  registerDogCleansing(dog:Dog){
+      return this.http.post(this.cleansing_dogsURL, dog);
   }
 
-  deleteCatsCleansing(cats:Cat[]){
-    let ids=cats.map((cat)=>cat.id);
-    return ids.forEach(id => {
-      this.http.delete(`${this.cleansing_catsURL}/${id}`).subscribe(); 
-     
-    });
+  registerCatAdoption(cat:Cat){
+    return this.http.post(this.catsUrl, cat);
   }
 
-  deleteDogsCleansing(dogs:Dog[]){
-    let ids=dogs.map((dog)=>dog.id);
-    return ids.forEach(id => {
-      this.http.delete(`${this.cleansing_dogsURL}/${id}`).subscribe(); 
-      
-    });
-  }
-
-
-  registerCatsCleansing(cats:Cat[]){
-    return cats.forEach(cat => {
-      this.http.post(this.cleansing_catsURL, cat).subscribe();
-    });
-  }
-
-  registerDogsCleansing(dogs:Dog[]){
-    return dogs.forEach(dog => {
-      this.http.post(this.cleansing_dogsURL, dog).subscribe();
-    });
-  }
-
-  registerCatsAdoption(cats:Cat[]){
-    return cats.forEach(cat => {
-      this.http.post(this.catsUrl, cat).subscribe();
-    });
-  }
-
-  registerDogsAdoption(dogs:Dog[]){
-    return dogs.forEach(dog => {
-      this.http.post(this.dogsUrl, dog).subscribe();
-    });
+  registerDogAdoption(dog:Dog){
+     return this.http.post(this.dogsUrl, dog);
   }
 
   getCatsCleansing(){

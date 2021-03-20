@@ -1,3 +1,19 @@
 {
-  "cats": []
+  "cats": [
+    {
+      "id": "8",
+      "ic": 1,
+      "ready": true
+    },
+    {
+      "id": "2",
+      "ic": 1,
+      "ready": true
+    },
+    {
+      "id": "1",
+      "ic": 120,
+      "ready": true
+    }
+  ]
 }

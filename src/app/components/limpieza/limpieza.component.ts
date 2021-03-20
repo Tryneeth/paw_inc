@@ -140,20 +140,39 @@ export class LimpiezaComponent implements OnInit {
 
 
   sendCatsToAdoption(){
-    if(this.catsCleansing.length>0){
-      this._pets.registerCatsAdoption(this.catsCleansing)
-      this._pets.deleteCatsCleansing(this.catsCleansing);
-      this.catsCleansing=[];
+  if(this.catsCleansing.length>0){
+      this.catsCleansing.forEach((cat)=>{
+        this._pets.registerCatAdoption(cat).subscribe((data)=>{
+          this._pets.deleteCatCleansing(cat.id).subscribe((data)=>{
+              console.log('Success');
+              this.catsCleansing=[];
+          }, (error)=>{
+            console.log('Error')
+          })
+        }, (error)=>{
+          console.log('Error')
+        })
+      })
+    
     }else{
       return null;
-    }
+    } 
 }
 
 sendDogsToAdoption(){
   if(this.dogsCleansing.length>0){
-    this._pets.registerDogsAdoption(this.dogsCleansing)
-    this._pets.deleteDogsCleansing(this.dogsCleansing);
-    this.dogsCleansing=[];
+    this.dogsCleansing.forEach((dog)=>{
+      this._pets.registerDogAdoption(dog).subscribe((data)=>{
+        this._pets.deleteDogCleansing(dog.id).subscribe((data)=>{
+            console.log('Success');
+            this.dogsCleansing=[];
+        }, (error)=>{
+          console.log('Error')
+        })
+      }, (error)=>{
+        console.log('Error')
+      })
+    })
   }else{
     return null;
   }
