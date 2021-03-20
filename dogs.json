@@ -1,26 +1,3 @@
 {
-  "dogs": [
-    {
-      "id": "8",
-      "skills": [
-        "sit"
-      ],
-      "ready": true
-    },
-    {
-      "id": "34",
-      "skills": [
-        "roll over",
-        "sit"
-      ],
-      "ready": true
-    },
-    {
-      "id": "666",
-      "skills": [
-        "roll over"
-      ],
-      "ready": true
-    }
-  ]
+  "dogs": []
 }
